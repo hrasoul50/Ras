@@ -41,6 +41,9 @@ func (a *InboundController) initRouter(g *gin.RouterGroup) {
 	g.POST("/delDepletedClients/:id", a.delDepletedClients)
 	g.POST("/import", a.importInbound)
 	g.POST("/onlines", a.onlines)
+	// مسیرهای جدید برای پروتکل‌های ocserv و openvpn
+	g.POST("/addOcserv", a.addOcserv)
+	g.POST("/addOpenvpn", a.addOpenvpn)
 }
 
 func (a *InboundController) getInbounds(c *gin.Context) {
@@ -326,4 +329,13 @@ func (a *InboundController) delDepletedClients(c *gin.Context) {
 
 func (a *InboundController) onlines(c *gin.Context) {
 	jsonObj(c, a.inboundService.GetOnlineClients(), nil)
+}
+
+// متدهای جدید برای پروتکل‌های ocserv و openvpn
+func (a *InboundController) addOcserv(c *gin.Context) {
+	// منطق افزودن ocserv
+}
+
+func (a *InboundController) addOpenvpn(c *gin.Context) {
+	// منطق افزودن openvpn
 }
