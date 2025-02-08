@@ -47,6 +47,9 @@ func (a *APIController) initRouter(g *gin.RouterGroup) {
 		{"POST", "/resetAllClientTraffics/:id", a.inboundController.resetAllClientTraffics},
 		{"POST", "/delDepletedClients/:id", a.inboundController.delDepletedClients},
 		{"POST", "/onlines", a.inboundController.onlines},
+		// اضافه کردن مسیرهای جدید برای پروتکل‌های ocserv و openvpn
+		{"POST", "/addOcserv", a.inboundController.addOcserv},
+		{"POST", "/addOpenvpn", a.inboundController.addOpenvpn},
 	}
 
 	for _, route := range inboundRoutes {
